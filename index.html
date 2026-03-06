@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Smart Inventory Tracking and Control System</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="header">
+Smart Inventory Tracking and Control System
+</div>
+
+<!-- LOGIN -->
+
+<div id="loginPage" class="login-container">
+
+<h2>Login</h2>
+
+<input type="email" id="email" placeholder="Email">
+<input type="password" id="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+<p>New user?
+<a href="#" onclick="showRegister()">Register</a>
+</p>
+
+</div>
+
+<!-- REGISTER -->
+
+<div id="registerPage" class="login-container" style="display:none;">
+
+<h2>Register</h2>
+
+<input type="text" id="regName" placeholder="Name">
+<input type="email" id="regEmail" placeholder="Email">
+<input type="password" id="regPass" placeholder="Password">
+
+<button onclick="register()">Register</button>
+
+<p>Already have account?
+<a href="#" onclick="showLogin()">Login</a>
+</p>
+
+</div>
+
+<!-- HOME -->
+
+<div id="homePage" style="display:none;">
+
+<div class="sidebar">
+
+<h2>Menu</h2>
+
+<button onclick="showSection('dashboard')">Dashboard</button>
+<button onclick="showSection('inventory')">Inventory</button>
+<button onclick="logout()">Logout</button>
+
+</div>
+
+<div class="main">
+
+<!-- DASHBOARD -->
+
+<div id="dashboard" class="section">
+
+<h1>Dashboard</h1>
+
+<div class="card">
+<h3>Total Items</h3>
+<h2 id="totalItems">0</h2>
+</div>
+
+<div class="card">
+<h3>Low Stock</h3>
+<h2 id="lowStock">0</h2>
+</div>
+
+<div class="card">
+<h3>Total Quantity</h3>
+<h2 id="totalQty">0</h2>
+</div>
+
+<div class="chart-container">
+<canvas id="myChart"></canvas>
+</div>
+
+</div>
+
+<!-- INVENTORY -->
+
+<div id="inventory" class="section" style="display:none;">
+
+<h1>Inventory Management</h1>
+
+<input type="text" id="search" placeholder="Search Item" onkeyup="search()"><br>
+
+<input type="text" id="name" placeholder="Item Name">
+<input type="text" id="supplier" placeholder="Supplier Name">
+<input type="number" id="qty" placeholder="Quantity">
+
+<button onclick="addItem()">Add Item</button>
+
+<table border="1" id="table"></table>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
